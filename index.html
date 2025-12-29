@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Admin Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Portal</title>
     <style>
         * {
             margin: 0;
@@ -104,7 +104,6 @@
             padding: 0 30px;
             color: var(--text-primary);
             letter-spacing: -0.5px;
-            cursor: pointer;
         }
 
         .category {
@@ -231,18 +230,11 @@
             opacity: 1;
         }
 
-        main.main-content {
+        .main-content {
             flex: 1;
-            padding: 30px 40px 60px;
+            padding: 30px 70px 60px 70px;
             overflow-y: auto;
             background: var(--bg-primary);
-            display: flex;
-            justify-content: center;
-        }
-
-        .main-inner {
-            width: 100%;
-            max-width: 1200px;
         }
 
         .top-bar {
@@ -448,20 +440,20 @@
         }
 
         .header {
-            margin-bottom: 24px;
+            margin-bottom: 40px;
         }
 
-        .main-inner h1 {
+        .main-content h1 {
             color: var(--text-primary);
             margin-bottom: 8px;
-            font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+            font-size: 36px;
             font-weight: 600;
-            letter-spacing: -0.03em;
+            letter-spacing: -1px;
         }
 
         .subtitle {
             color: var(--text-secondary);
-            font-size: clamp(0.9rem, 1.4vw, 1rem);
+            font-size: 16px;
             font-weight: 400;
         }
 
@@ -473,11 +465,11 @@
         }
 
         .year-card {
-            background: var(--bg-secondary);
+            background: linear-gradient(135deg, var(--bg-secondary), var(--hover-bg));
             padding: 24px;
-            border-radius: 14px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
-            transition: all 0.18s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
             position: relative;
@@ -498,8 +490,8 @@
 
         .year-card:hover {
             border-color: var(--accent-color);
-            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
-            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
         }
 
         .year-card:hover::before {
@@ -558,7 +550,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: all 0.18s ease;
+            transition: all 0.2s ease;
             cursor: pointer;
             position: relative;
         }
@@ -615,7 +607,6 @@
             gap: 12px;
             font-size: 12px;
             color: var(--text-tertiary);
-            flex-wrap: wrap;
         }
 
         .document-meta span {
@@ -631,7 +622,6 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            white-space: nowrap;
         }
 
         .document-preview {
@@ -750,84 +740,25 @@
             font-size: 16px;
         }
 
-        /* Dashboard */
-
-        .dashboard {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .dashboard-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .dashboard-card {
+        .welcome-content {
             background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
+            padding: 50px;
             border-radius: 12px;
-            padding: 18px 20px;
-            cursor: pointer;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+            border: 1px solid var(--border-color);
+            text-align: center;
         }
 
-        .dashboard-card h3 {
-            font-size: 16px;
-            margin-bottom: 6px;
-        }
-
-        .dashboard-card p {
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        .dashboard-card.primary {
-            background: linear-gradient(135deg, var(--master-color), var(--accent-color));
-            color: #fff;
-            border: none;
-        }
-
-        .dashboard-card.primary p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .dashboard-card.wide {
-            grid-column: 1 / -1;
-        }
-
-        .dashboard-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
-            border-color: var(--accent-color);
-        }
-
-        .recent-doc-item {
-            display: flex;
-            flex-direction: column;
-            padding: 8px 10px;
-            border-radius: 8px;
-            border: 1px solid transparent;
-            cursor: pointer;
-            transition: background 0.15s ease, border-color 0.15s ease;
-            margin-bottom: 6px;
-        }
-
-        .recent-doc-item span {
-            font-size: 13px;
+        .welcome-content h2 {
             color: var(--text-primary);
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
         }
 
-        .recent-doc-item small {
-            font-size: 11px;
-            color: var(--text-tertiary);
-        }
-
-        .recent-doc-item:hover {
-            background: var(--hover-bg);
-            border-color: var(--border-color);
+        .welcome-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
         }
 
         .subcategory-grid {
@@ -842,7 +773,7 @@
             padding: 24px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            transition: all 0.18s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
 
@@ -863,20 +794,6 @@
             color: var(--text-secondary);
             font-size: 13px;
             line-height: 1.5;
-        }
-
-        button, a, .year-card, .dashboard-card, .subcategory-card, .recent-doc-item {
-            outline: none;
-        }
-
-        button:focus-visible,
-        a:focus-visible,
-        .year-card:focus-visible,
-        .dashboard-card:focus-visible,
-        .subcategory-card:focus-visible,
-        .recent-doc-item:focus-visible {
-            outline: 2px solid var(--accent-color);
-            outline-offset: 3px;
         }
 
         ::-webkit-scrollbar {
@@ -910,7 +827,7 @@
                 box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
             }
 
-            main.main-content {
+            .main-content {
                 padding: 100px 20px 30px 20px;
             }
 
@@ -927,16 +844,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .main-inner h1 {
-                font-size: 24px;
+            .main-content h1 {
+                font-size: 28px;
             }
 
             .document-preview {
                 display: none;
-            }
-
-            .dashboard-row {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -944,9 +857,9 @@
 <body>
     <button class="mobile-toggle" id="mobileToggle">☰</button>
 
-    <aside class="sidebar" id="sidebar">
-        <div class="logo" id="logoHome">🏫 School Portal</div>
-
+    <div class="sidebar" id="sidebar">
+        <div class="logo">🏫 School Portal</div>
+        
         <div class="category">
             <div class="category-header school-board" id="schoolBoardHeader">
                 <span><span class="icon">🏛️</span> School Board</span>
@@ -989,75 +902,647 @@
                 </ul>
             </div>
         </div>
-    </aside>
+    </div>
 
-    <main class="main-content">
-        <div class="main-inner">
-            <div class="top-bar">
-                <div class="search-container">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" class="search-box" id="searchBox" placeholder="Search documents by name, year, or category...">
-                    <button class="filter-btn" id="filterBtn">⚙️</button>
-                    <div class="filter-panel" id="filterPanel">
-                        <div class="filter-group">
-                            <label>Category</label>
-                            <select id="categoryFilter">
-                                <option value="all">All Categories</option>
-                                <option value="master">Master</option>
-                                <option value="front-pages">Front Pages</option>
-                                <option value="school-board">School Board</option>
-                                <option value="staff">Staff</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>Year</label>
-                            <select id="yearFilter">
-                                <option value="all">All Years</option>
-                                <option value="2025">2025</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>Document Type</label>
-                            <select id="typeFilter">
-                                <option value="all">All Types</option>
-                                <option value="pdf">PDF</option>
-                                <option value="excel">Excel</option>
-                                <option value="image">Image</option>
-                            </select>
-                        </div>
-                        <div class="recent-searches">
-                            <h4>Recent Searches</h4>
-                            <div id="recentSearchesList"></div>
-                        </div>
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-box" id="searchBox" placeholder="Search documents...">
+                <button class="filter-btn" id="filterBtn">⚙️</button>
+                <div class="filter-panel" id="filterPanel">
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="master">Master</option>
+                            <option value="school-board">School Board</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Year</label>
+                        <select id="yearFilter">
+                            <option value="all">All Years</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Document Type</label>
+                        <select id="typeFilter">
+                            <option value="all">All Types</option>
+                            <option value="pdf">PDF</option>
+                            <option value="excel">Excel</option>
+                            <option value="image">Image</option>
+                        </select>
+                    </div>
+                    <div class="recent-searches">
+                        <h4>Recent Searches</h4>
+                        <div id="recentSearchesList"></div>
                     </div>
                 </div>
-                <div class="top-actions">
-                    <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
-                </div>
             </div>
-
-            <div id="navigationArea"></div>
-            <div id="contentArea"><!-- JS will render content here --></div>
+            <div class="top-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+            </div>
         </div>
-    </main>
+
+        <div id="navigationArea"></div>
+
+        <div id="contentArea">
+            <div class="welcome-content">
+                <h2>Welcome to School Portal</h2>
+                <p>Select a category from the sidebar to view records and information.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Preview Modal -->
     <div class="modal-overlay" id="previewModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modalTitle">Document Preview</h3>
-                <button class="modal-close" id="modalCloseBtn">✕</button>
+                <button class="modal-close" onclick="closeModal()">✕</button>
             </div>
             <div class="modal-body">
+                <!-- Content will be injected by JS -->
                 <div class="pdf-preview" id="previewContent"></div>
             </div>
         </div>
     </div>
 
-    <!-- Data and App Scripts -->
     <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script>
+        // Navigation history
+        let navigationHistory = [{ type: 'home', name: 'Home' }];
+        let recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Mobile toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        mobileToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+        });
+
+        // Filter panel toggle
+        const filterBtn = document.getElementById('filterBtn');
+        const filterPanel = document.getElementById('filterPanel');
+
+        filterBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            filterPanel.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!filterPanel.contains(e.target) && e.target !== filterBtn) {
+                filterPanel.classList.remove('active');
+            }
+        });
+
+        // Search functionality
+        const searchBox = document.getElementById('searchBox');
+        searchBox.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                addRecentSearch(this.value.trim());
+                // Implement search logic here
+                console.log('Searching for:', this.value);
+            }
+        });
+
+        function addRecentSearch(query) {
+            if (!recentSearches.includes(query)) {
+                recentSearches.unshift(query);
+                if (recentSearches.length > 5) recentSearches.pop();
+                localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+                updateRecentSearches();
+            }
+        }
+
+        function updateRecentSearches() {
+            const list = document.getElementById('recentSearchesList');
+            list.innerHTML = recentSearches.map(search => 
+                `<div class="recent-search-item" onclick="searchBox.value='${search}'; searchBox.focus();">
+                    🕐 ${search}
+                </div>`
+            ).join('');
+        }
+
+        updateRecentSearches();
+
+        // Category toggles
+        const categoryHeaders = [
+            { header: 'schoolBoardHeader', list: 'schoolBoardList' },
+            { header: 'masterHeader', list: 'masterList' },
+            { header: 'staffHeader', list: 'staffList' }
+        ];
+
+        categoryHeaders.forEach(cat => {
+            const header = document.getElementById(cat.header);
+            const list = document.getElementById(cat.list);
+            
+            header.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+                list.classList.toggle('expanded');
+            });
+        });
+
+        // Category names mapping
+        const categoryNames = {
+            'all-masters': 'All Masters Yearwise',
+            'front-pages': 'All Masters Front Pages Yearwise',
+            'society': 'Society',
+            'smc': 'School Managing Committee',
+            'pta-ec': 'PTA (EC)',
+            'pta-gb': 'PTA (GB)',
+            'fee-regulation': 'School-Level Fee Regulation Committees',
+            'staff-directory': 'Staff Directory',
+            'attendance': 'Attendance',
+            'leave': 'Leave Management'
+        };
+
+        // Front page subcategories data
+        const frontPageSubcategories = [
+            { id: 'school-undertaking', name: 'School Under taking' },
+            { id: 'master-index', name: 'Master Index' },
+            { id: 'specimen-signature', name: 'Specimen Signature' },
+            { id: 'school-id-email', name: 'School Id & School E-mail' },
+            { id: 'class-enrollment', name: 'Class wise Enrollment of Students' },
+            { id: 'staff-academic', name: 'Staff Statement (Academic)' },
+            { id: 'staff-academic-contractual', name: 'Staff Statement (Academic - Contractual)' },
+            { id: 'staff-non-academic', name: 'Staff Statement (Non - Academic)' },
+            { id: 'staff-non-academic-contractual', name: 'Staff Statement (Non - Academic - Contractual)' },
+            { id: 'staff-group-d', name: 'Staff Statement (Group - D)' },
+            { id: 'management-committee', name: 'Members of Management Committee' },
+            { id: 'fdr-copy', name: 'Copy of FDR' },
+            { id: 'fee-structure', name: 'Fee Structure' },
+            { id: 'school-area', name: 'Statement Regarding School Area' },
+            { id: 'building-utilization', name: 'Building Utilization' },
+            { id: 'noc-fire', name: 'NOC(Fire Safety)' },
+            { id: 'special-activities', name: 'Special Activities' },
+            { id: 'playground', name: 'Playground' },
+            { id: 'scheme-management', name: 'Scheme of Management' },
+            { id: 'building-fitness', name: 'Building Fitness Certificate' },
+            { id: 'infrastructure', name: 'Infrastructure of Building' },
+            { id: 'ec-copy', name: 'Copy of EC (Essentiality Certificate)' },
+            { id: 'recognition-copy', name: 'Copy of Recognization' },
+            { id: 'upgradation-copy', name: 'Copy of Upgradation' },
+            { id: 'health-certificate', name: 'Copy of School Health Certificate' },
+            { id: 'rwh-certificate', name: 'RWH Certificate (Rain Water Harvesting)' },
+            { id: 'classroom-details', name: 'Detail of Classrooms' },
+            { id: 'ews-dg', name: 'EWS - DG' },
+            { id: 'library', name: 'Library' },
+            { id: 'physics-lab', name: 'Physics Lab' },
+            { id: 'chemistry-lab', name: 'Chemistry Lab' },
+            { id: 'biology-lab', name: 'Biology Lab' },
+            { id: 'composite-lab', name: 'Composite Lab' },
+            { id: 'dmsss-certificate', name: 'DMSSS Certificate (No Commercial use of School Campus)' }
+        ];
+
+        // Navigation handling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const categoryName = categoryNames[category] || category;
+                
+                // RESET navigation history when clicking a sidebar link
+                navigationHistory = [{ type: 'home', name: 'Home' }];
+                
+                addToHistory({ type: 'category', name: categoryName, category: category });
+                loadContent(category, categoryName);
+                
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.add('collapsed');
+                }
+            });
+        });
+
+        function addToHistory(item) {
+            navigationHistory.push(item);
+            updateBreadcrumb();
+        }
+
+        function goBack() {
+            if (navigationHistory.length > 1) {
+                navigationHistory.pop();
+                const previous = navigationHistory[navigationHistory.length - 1];
+                restoreView(previous);
+            }
+        }
+
+        function updateBreadcrumb() {
+            const navArea = document.getElementById('navigationArea');
+            
+            if (navigationHistory.length <= 1) {
+                navArea.innerHTML = '';
+                return;
+            }
+
+            let breadcrumbHTML = '<div class="breadcrumb-nav">';
+            navigationHistory.forEach((item, index) => {
+                if (index < navigationHistory.length - 1) {
+                    breadcrumbHTML += `<a href="#" onclick="navigateToIndex(${index}); return false;">${item.name}</a>`;
+                    breadcrumbHTML += '<span>/</span>';
+                } else {
+                    breadcrumbHTML += `<span>${item.name}</span>`;
+                }
+            });
+            breadcrumbHTML += '</div>';
+
+            if (navigationHistory.length > 1) {
+                breadcrumbHTML += '<button class="back-button" onclick="goBack()">← Back</button>';
+            }
+
+            navArea.innerHTML = breadcrumbHTML;
+        }
+
+        function navigateToIndex(index) {
+            // Cut history to the clicked point
+            navigationHistory = navigationHistory.slice(0, index + 1);
+            const item = navigationHistory[index];
+            restoreView(item);
+        }
+
+        // Centralized function to restore view based on history item type
+        function restoreView(item) {
+            if (item.type === 'home') {
+                location.reload();
+            } else if (item.type === 'category') {
+                // Restore sidebar highlight
+                document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+                const link = document.querySelector(`.nav-link[data-category="${item.category}"]`);
+                if(link) link.classList.add('active');
+                
+                loadContent(item.category, item.name);
+            } else if (item.type === 'year') {
+                loadMasterDocuments(item.year);
+            } else if (item.type === 'subcategory') {
+                loadSubcategoryYears(item.subcatId, item.name);
+            } else if (item.type === 'subcategory-year') {
+                loadSubcategoryDocuments(item.subcatId, item.name, item.year);
+            }
+            
+            updateBreadcrumb(); // Ensure breadcrumb visual matches state
+        }
+
+        function loadContent(category, categoryName) {
+            const contentArea = document.getElementById('contentArea');
+            
+            if (category === 'all-masters') {
+                loadAllMasters(contentArea, categoryName);
+            } else if (category === 'front-pages') {
+                loadFrontPages(contentArea, categoryName);
+            } else if (window.schoolData && window.schoolData[category]) {
+                loadYearWiseData(contentArea, categoryName, category);
+            } else {
+                loadPlaceholder(contentArea, categoryName);
+            }
+        }
+
+        function getStatusForYear(year) {
+            const currentYear = new Date().getFullYear();
+            if (year === currentYear) return 'new';
+            if (year === currentYear - 1) return 'updated';
+            if (year < 2000) return 'archived';
+            return null;
+        }
+
+        function getStatusBadge(status) {
+            if (!status) return '';
+            const labels = { new: 'New', updated: 'Updated', archived: 'Archived' };
+            return `<span class="status-badge status-${status}">${labels[status]}</span>`;
+        }
+
+        function loadAllMasters(contentArea, categoryName) {
+            let html = `
+                <div class="header">
+                    <h1>${categoryName}</h1>
+                    <p class="subtitle">Select a year to view master documents</p>
+                </div>
+                <div class="year-grid">
+            `;
+            
+            for (let year = 2024; year >= 1995; year--) {
+                const status = getStatusForYear(year);
+                html += `
+                    <div class="year-card" onclick="loadMasterDocuments(${year})">
+                        ${getStatusBadge(status)}
+                        <h3>${year}-${(year+1).toString().slice(2)}</h3>
+                        <p>Master File</p>
+                    </div>
+                `;
+            }
+            
+            html += '</div>';
+            contentArea.innerHTML = html;
+        }
+
+        function loadFrontPages(contentArea, categoryName) {
+            let html = `
+                <div class="header">
+                    <h1>${categoryName}</h1>
+                    <p class="subtitle">Select a document category</p>
+                </div>
+                <div class="subcategory-grid">
+            `;
+            
+            frontPageSubcategories.forEach(subcat => {
+                html += `
+                    <div class="subcategory-card" onclick="loadSubcategoryYears('${subcat.id}', '${subcat.name}')">
+                        <h4>${subcat.name}</h4>
+                        <p>View year-wise documents</p>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            contentArea.innerHTML = html;
+        }
+
+        function loadYearWiseData(contentArea, categoryName, category) {
+            const years = window.schoolData[category];
+            let html = `
+                <div class="header">
+                    <h1>${categoryName}</h1>
+                    <p class="subtitle">Select a year to view details</p>
+                </div>
+                <div class="year-grid">
+            `;
+            
+            years.forEach(item => {
+                const yearInt = parseInt(item.year.split('-')[0]) || parseInt(item.year);
+                const status = getStatusForYear(yearInt);
+                html += `
+                    <div class="year-card" onclick="loadYearDetails('${category}', '${item.year}')">
+                        ${getStatusBadge(status)}
+                        <h3>${item.year}</h3>
+                        <p>${item.members} Members</p>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            contentArea.innerHTML = html;
+        }
+
+        function loadPlaceholder(contentArea, categoryName) {
+            contentArea.innerHTML = `
+                <div class="header">
+                    <h1>${categoryName}</h1>
+                    <p class="subtitle">Content coming soon...</p>
+                </div>
+                <div class="welcome-content">
+                    <h2>${categoryName}</h2>
+                    <p>This section is under development. More features will be added soon.</p>
+                </div>
+            `;
+        }
+
+        function getDocIcon(type) {
+            if (type === 'pdf') return { icon: '📄', class: 'icon-pdf' };
+            if (type === 'excel') return { icon: '📊', class: 'icon-excel' };
+            if (type === 'image') return { icon: '🖼️', class: 'icon-image' };
+            return { icon: '📄', class: 'icon-pdf' };
+        }
+
+        function loadMasterDocuments(year) {
+            const contentArea = document.getElementById('contentArea');
+            // Check if we already have this in history to prevent duplicates when using breadcrumbs
+            const lastItem = navigationHistory[navigationHistory.length - 1];
+            if (lastItem.type !== 'year' || lastItem.year !== year) {
+                addToHistory({ type: 'year', name: `Master ${year}`, year: year });
+            }
+            
+            let html = `
+                <div class="header">
+                    <h1>Master Documents - ${year}</h1>
+                    <p class="subtitle">Download PDF files</p>
+                </div>
+                <div class="document-list">
+            `;
+            
+            if (window.masterDocuments && window.masterDocuments[year]) {
+                window.masterDocuments[year].forEach(doc => {
+                    const iconData = getDocIcon(doc.type || 'pdf');
+                    html += `
+                        <div class="document-item" onclick="openPreview('${doc.name}', '${doc.url}')">
+                            <div class="document-preview">
+                                <div class="preview-image">${iconData.icon}</div>
+                                <div class="preview-info">
+                                    📄 ${doc.pages || 'N/A'} pages<br>
+                                    💾 ${doc.size || 'PDF'}
+                                </div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-icon ${iconData.class}">${iconData.icon}</div>
+                                <div class="document-details">
+                                    <h4>${doc.name}</h4>
+                                    <div class="document-meta">
+                                        <span>📄 ${doc.pages || 'N/A'} pages</span>
+                                        <span>💾 ${doc.size || 'PDF'}</span>
+                                        <span>📅 ${doc.date || 'Yearly'}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="document-action">
+                                Preview →
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                html += `
+                    <div class="welcome-content">
+                        <h2>No documents available</h2>
+                        <p>Documents for ${year} will be added soon.</p>
+                    </div>
+                `;
+            }
+            
+            html += '</div>';
+            contentArea.innerHTML = html;
+        }
+
+        function loadSubcategoryYears(subcatId, subcatName) {
+            const contentArea = document.getElementById('contentArea');
+            const lastItem = navigationHistory[navigationHistory.length - 1];
+            if (lastItem.type !== 'subcategory' || lastItem.subcatId !== subcatId) {
+                 addToHistory({ type: 'subcategory', name: subcatName, subcatId: subcatId });
+            }
+
+            let html = `
+                <div class="header">
+                    <h1>${subcatName}</h1>
+                    <p class="subtitle">Select a year</p>
+                </div>
+                <div class="year-grid">
+            `;
+            
+            for (let year = 2025; year >= 1995; year--) {
+                const status = getStatusForYear(year);
+                html += `
+                    <div class="year-card" onclick="loadSubcategoryDocuments('${subcatId}', '${subcatName}', ${year})">
+                        ${getStatusBadge(status)}
+                        <h3>${year}</h3>
+                        <p>Documents</p>
+                    </div>
+                `;
+            }
+            
+            html += '</div>';
+            contentArea.innerHTML = html;
+        }
+
+        function loadSubcategoryDocuments(subcatId, subcatName, year) {
+            const contentArea = document.getElementById('contentArea');
+            const lastItem = navigationHistory[navigationHistory.length - 1];
+            if (lastItem.type !== 'subcategory-year' || lastItem.year !== year) {
+                addToHistory({ type: 'subcategory-year', name: `${subcatName} - ${year}`, subcatId: subcatId, subcatName: subcatName, year: year });
+            }
+            
+            let html = `
+                <div class="header">
+                    <h1>${subcatName} - ${year}</h1>
+                    <p class="subtitle">Download documents</p>
+                </div>
+                <div class="document-list">
+            `;
+            
+            if (window.frontPageDocuments && window.frontPageDocuments[subcatId] && window.frontPageDocuments[subcatId][year]) {
+                window.frontPageDocuments[subcatId][year].forEach(doc => {
+                    const iconData = getDocIcon(doc.type || 'pdf');
+                    html += `
+                        <div class="document-item" onclick="openPreview('${doc.name}', '${doc.url}')">
+                            <div class="document-preview">
+                                <div class="preview-image">${iconData.icon}</div>
+                                <div class="preview-info">
+                                    📄 ${doc.pages || '10'} pages<br>
+                                    💾 ${doc.size || '2.5 MB'}
+                                </div>
+                            </div>
+                            <div class="document-info">
+                                <div class="document-icon ${iconData.class}">${iconData.icon}</div>
+                                <div class="document-details">
+                                    <h4>${doc.name}</h4>
+                                    <div class="document-meta">
+                                        <span>📄 ${doc.pages || '10'} pages</span>
+                                        <span>💾 ${doc.size || '500 KB'}</span>
+                                        <span>📅 ${doc.date || 'Jan 2024'}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="document-action">
+                                Preview →
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                html += `
+                    <div class="welcome-content">
+                        <h2>No documents available</h2>
+                        <p>Documents will be added soon.</p>
+                    </div>
+                `;
+            }
+            
+            html += '</div>';
+            contentArea.innerHTML = html;
+        }
+
+        function loadYearDetails(category, year) {
+            const contentArea = document.getElementById('contentArea');
+            
+            contentArea.innerHTML = `
+                <div class="header">
+                    <h1>${categoryNames[category] || category} - ${year}</h1>
+                    <p class="subtitle">Member details and documents</p>
+                </div>
+                <div class="welcome-content">
+                    <h2>Coming Soon</h2>
+                    <p>Detailed information for ${year} will be available here.</p>
+                </div>
+            `;
+        }
+
+        function openPreview(name, url) {
+            document.getElementById('modalTitle').textContent = name;
+            const modalBody = document.querySelector('.modal-body');
+            
+            // Convert Google Drive view links to preview links for embedding
+            let embedUrl = url;
+            if (url.includes('drive.google.com') && url.includes('/view')) {
+                embedUrl = url.replace('/view', '/preview');
+            }
+
+            modalBody.innerHTML = `
+                <div style="text-align: right; margin-bottom: 15px;">
+                    <a href="${url}" target="_blank" style="background: var(--accent-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;">
+                        <span>Open in New Tab</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+                <iframe src="${embedUrl}" width="100%" height="100%" style="border: none; border-radius: 8px; background: #f5f5f5; min-height: 500px;">
+                    <p>Your browser does not support iframes. <a href="${url}">Click here to view the document.</a></p>
+                </iframe>
+            `;
+            
+            document.getElementById('previewModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('previewModal').classList.remove('active');
+            // Clear iframe to stop memory leaks
+            document.querySelector('.modal-body').innerHTML = '<div class="pdf-preview" id="previewContent"></div>';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('previewModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    sidebar.classList.add('collapsed');
+                }
+            }
+        });
+
+        // Auto expand School Board category on load
+        document.getElementById('schoolBoardHeader').classList.add('expanded');
+        document.getElementById('schoolBoardList').classList.add('expanded');
+    </script>
 </body>
 </html>
